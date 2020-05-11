@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>nodejs on HotPlato Blog</title>
-    <link>http://example.org/tags/nodejs/</link>
+    <link>http://blog.hotplato.top/tags/nodejs/</link>
     <description>Recent content in nodejs on HotPlato Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Tue, 03 Mar 2020 18:35:13 +0800</lastBuildDate>
     
-	<atom:link href="http://example.org/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://blog.hotplato.top/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>快速生成Hash</title>
-      <link>http://example.org/posts/%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90hash/</link>
+      <link>http://blog.hotplato.top/posts/%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90hash/</link>
       <pubDate>Tue, 03 Mar 2020 18:35:13 +0800</pubDate>
       
-      <guid>http://example.org/posts/%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90hash/</guid>
+      <guid>http://blog.hotplato.top/posts/%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90hash/</guid>
       <description>&lt;p&gt;纯 JavaScript 生成 hash 字符串&lt;/p&gt;</description>
     </item>
     
