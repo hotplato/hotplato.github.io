@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>HotPlato Blog  | var let const使用和区别</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.65.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="var let const使用和区别" />
+<meta property="og:description" content="var、let 和 const 命令，都是我们最常使用的命令。我们应该如何去使用，且它们有什么区别了。我们通过实际代码去探索。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/var-let-const%E5%88%86%E6%9E%90/" />
+<meta property="article:published_time" content="2020-03-04T20:31:59+08:00" />
+<meta property="article:modified_time" content="2020-03-04T20:31:59+08:00" />
+<meta itemprop="name" content="var let const使用和区别">
+<meta itemprop="description" content="var、let 和 const 命令，都是我们最常使用的命令。我们应该如何去使用，且它们有什么区别了。我们通过实际代码去探索。">
+<meta itemprop="datePublished" content="2020-03-04T20:31:59&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-04T20:31:59&#43;08:00" />
+<meta itemprop="wordCount" content="365">
+
+
+
+<meta itemprop="keywords" content="javascript,let,var,const," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="var let const使用和区别"/>
+<meta name="twitter:description" content="var、let 和 const 命令，都是我们最常使用的命令。我们应该如何去使用，且它们有什么区别了。我们通过实际代码去探索。"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('http://example.org/images/var_let_const.png');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://example.org/" class="f4 fw2 hover-white no-underline white-90 dib">
+      首页
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="blog section page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">var let const使用和区别</h1>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+      <h1 class="f1 athelas mt3 mb1">var let const使用和区别</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-03-04T20:31:59&#43;08:00">2020-03-04 20:31</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>var、let 和 const 命令，都是我们最常使用的命令。我们应该如何去使用，且它们有什么区别了。我们通过实际代码去探索。</p>
+<h2 id="var-命令">var 命令</h2>
+<p>var 声明语句声明一个变量，并可选地将其初始化为一个值。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>,<span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span> <span style="color:#75715e">//连续声明
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>) <span style="color:#75715e">// 输出: 1
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>) <span style="color:#75715e">// 输出: 2
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">c</span>) <span style="color:#75715e">// 输出: 3
+</span></code></pre></div><h2 id="let-命令">let 命令</h2>
+<p>let 是 ES6 新增，类似于 var 的功能，但 let 只在作用域中有效</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>) <span style="color:#75715e">// a is not defined (变量a未定义)
+</span></code></pre></div><h2 id="const-命令">const 命令</h2>
+<p>const 也同样是 ES6 新增命令，声明一个只读的常量。一旦声明，常量的值就不能改变。本质上，const 变量值不能改，只是指 const 声明后的变量的所在内存地址。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PI</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.1415</span>
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.1415</span>
+<span style="color:#a6e22e">PI</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14</span> <span style="color:#75715e">// Assignment to constant variable. (常量重新赋值错误)
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">pi</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">pi</span>) <span style="color:#75715e">// 输出: 3.14
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// 声明一个常量c的变量对象
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> {}
+<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;c name&#39;</span> <span style="color:#75715e">// 允许修改
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">name</span>) <span style="color:#75715e">// 输出: c name
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> {} <span style="color:#75715e">// Assignment to constant variable. (常量重新赋值错误)
+</span></code></pre></div><h2 id="varlet-和-const-的区别">var、let 和 const 的区别</h2>
+<h3 id="变量提升">变量提升</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// var 存在变量提升，即如下
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;a string&#39;</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>) <span style="color:#75715e">// 输出: a string
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//可以理解为以下的流程:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span>
+<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;a string&#39;</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>) <span style="color:#75715e">// 输出: a string
+</span></code></pre></div><p>注意: 建议在作用域顶部进行变量声明变量，这样能使得代码更清晰</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// let 不存在变量提升
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;b string&#39;</span>
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>) <span style="color:#75715e">// 输出: undefined
+</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
+<span style="color:#75715e">// const 不存在变量提升
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;c string&#34;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">c</span>; <span style="color:#75715e">// Missing initializer in const declaration (const命令必须先初始化)
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">c</span>) <span style="color:#75715e">// 永不运行到此处
+</span><span style="color:#75715e"></span>
+</code></pre></div><h3 id="重复声明">重复声明</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;a string 1&#39;</span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;a string 2&#39;</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>) <span style="color:#75715e">// 输出: a string 2
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// let 不允许在同一作用域内重复声明
+</span><span style="color:#75715e"></span>{
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;b string 1&#39;</span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;b string 2&#39;</span> <span style="color:#75715e">// Identifier &#39;b&#39; has already been declared (b已经被声明)
+</span><span style="color:#75715e"></span>}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">bFunc</span>(<span style="color:#a6e22e">arg</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arg</span>
+}
+<span style="color:#75715e">// Identifier &#39;arg&#39; has already been declared (arg 已经被声明)
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">//const 不允许重复声明
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;c string 1&#39;</span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;c string 2&#39;</span> <span style="color:#75715e">// Identifier &#39;b&#39; has already been declared (b已经被声明)
+</span></code></pre></div><h3 id="暂时性死区">暂时性死区</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
+<span style="color:#75715e">// var
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;a string 1&#39;</span>
+<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">true</span>) {
+  <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;a string 2&#39;</span>
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span>
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>) <span style="color:#75715e">// 输出: a string 2;
+</span><span style="color:#75715e"></span>}
+
+
+<span style="color:#75715e">// let
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;b string 1&#39;</span>
+
+<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">true</span>) {
+  <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;b string 2&#39;</span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span>
+}
+<span style="color:#75715e">// Cannot access &#39;a&#39; before initialization (无法在初始化之前访问b)
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// const
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;c string 1&#39;</span>
+<span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">true</span>) {
+  <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;c string 2&#39;</span>
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">c</span>
+}
+<span style="color:#75715e">// Missing initializer in const declaration (const命令必须先初始化)
+</span><span style="color:#75715e"></span>
+</code></pre></div><h3 id="顶层对象">顶层对象</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;a string&#39;</span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;b string&#39;</span>
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;c string&#39;</span>
+}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">windows</span>.<span style="color:#a6e22e">a</span>) <span style="color:#75715e">// a string
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">windows</span>.<span style="color:#a6e22e">b</span>) <span style="color:#75715e">// undefined
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">windows</span>.<span style="color:#a6e22e">c</span>) <span style="color:#75715e">// undefined
+</span></code></pre></div><ul class="pa0">
+  
+   <li class="list">
+     <a href="/tags/javascript" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">javascript</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/let" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">let</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/var" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">var</a>
+   </li>
+  
+   <li class="list">
+     <a href="/tags/const" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">const</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  HotPlato Blog 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
