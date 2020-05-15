@@ -2,75 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on HotPlato Blog</title>
-    <link>http://blog.hotplato.top/tags/</link>
+    <link>https://blog.hotplato.top/tags/</link>
     <description>Recent content in Tags on HotPlato Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Wed, 04 Mar 2020 20:31:59 +0800</lastBuildDate>
     
-	<atom:link href="http://blog.hotplato.top/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.hotplato.top/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>const</title>
-      <link>http://blog.hotplato.top/tags/const/</link>
+      <link>https://blog.hotplato.top/tags/const/</link>
       <pubDate>Wed, 04 Mar 2020 20:31:59 +0800</pubDate>
       
-      <guid>http://blog.hotplato.top/tags/const/</guid>
+      <guid>https://blog.hotplato.top/tags/const/</guid>
       <description></description>
     </item>
     
     <item>
       <title>javascript</title>
-      <link>http://blog.hotplato.top/tags/javascript/</link>
+      <link>https://blog.hotplato.top/tags/javascript/</link>
       <pubDate>Wed, 04 Mar 2020 20:31:59 +0800</pubDate>
       
-      <guid>http://blog.hotplato.top/tags/javascript/</guid>
+      <guid>https://blog.hotplato.top/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>let</title>
-      <link>http://blog.hotplato.top/tags/let/</link>
+      <link>https://blog.hotplato.top/tags/let/</link>
       <pubDate>Wed, 04 Mar 2020 20:31:59 +0800</pubDate>
       
-      <guid>http://blog.hotplato.top/tags/let/</guid>
+      <guid>https://blog.hotplato.top/tags/let/</guid>
       <description></description>
     </item>
     
     <item>
       <title>var</title>
-      <link>http://blog.hotplato.top/tags/var/</link>
+      <link>https://blog.hotplato.top/tags/var/</link>
       <pubDate>Wed, 04 Mar 2020 20:31:59 +0800</pubDate>
       
-      <guid>http://blog.hotplato.top/tags/var/</guid>
+      <guid>https://blog.hotplato.top/tags/var/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hash</title>
-      <link>http://blog.hotplato.top/tags/hash/</link>
+      <link>https://blog.hotplato.top/tags/hash/</link>
       <pubDate>Tue, 03 Mar 2020 18:35:13 +0800</pubDate>
       
-      <guid>http://blog.hotplato.top/tags/hash/</guid>
+      <guid>https://blog.hotplato.top/tags/hash/</guid>
       <description></description>
     </item>
     
     <item>
       <title>js</title>
-      <link>http://blog.hotplato.top/tags/js/</link>
+      <link>https://blog.hotplato.top/tags/js/</link>
       <pubDate>Tue, 03 Mar 2020 18:35:13 +0800</pubDate>
       
-      <guid>http://blog.hotplato.top/tags/js/</guid>
+      <guid>https://blog.hotplato.top/tags/js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nodejs</title>
-      <link>http://blog.hotplato.top/tags/nodejs/</link>
+      <link>https://blog.hotplato.top/tags/nodejs/</link>
       <pubDate>Tue, 03 Mar 2020 18:35:13 +0800</pubDate>
       
-      <guid>http://blog.hotplato.top/tags/nodejs/</guid>
+      <guid>https://blog.hotplato.top/tags/nodejs/</guid>
       <description></description>
     </item>
     
