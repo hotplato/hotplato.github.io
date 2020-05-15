@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>HotPlato Blog  | JS设计模式-单例模式</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.65.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+    
+    <meta property="og:title" content="JS设计模式-单例模式" />
+<meta property="og:description" content="单例模式，全局之下有且只有一个实例。我们代码之中，常常在加载大量数据时，显示的loadding组件。这个loadding组件在全局之下只被创建一次，那么这个loadding足奖就适用于单例模式。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://blog.hotplato.top/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" />
+<meta property="article:published_time" content="2020-05-15T23:26:31+08:00" />
+<meta property="article:modified_time" content="2020-05-15T23:26:31+08:00" />
+<meta itemprop="name" content="JS设计模式-单例模式">
+<meta itemprop="description" content="单例模式，全局之下有且只有一个实例。我们代码之中，常常在加载大量数据时，显示的loadding组件。这个loadding组件在全局之下只被创建一次，那么这个loadding足奖就适用于单例模式。">
+<meta itemprop="datePublished" content="2020-05-15T23:26:31&#43;08:00" />
+<meta itemprop="dateModified" content="2020-05-15T23:26:31&#43;08:00" />
+<meta itemprop="wordCount" content="91">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JS设计模式-单例模式"/>
+<meta name="twitter:description" content="单例模式，全局之下有且只有一个实例。我们代码之中，常常在加载大量数据时，显示的loadding组件。这个loadding组件在全局之下只被创建一次，那么这个loadding足奖就适用于单例模式。"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://blog.hotplato.top/" class="f4 fw2 hover-white no-underline white-90 dib">
+      首页
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="blog section page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+      <h1 class="f1 athelas mt3 mb1">JS设计模式-单例模式</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-05-15T23:26:31&#43;08:00">2020-05-15 23:26</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>单例模式，全局之下有且只有一个实例。我们代码之中，常常在加载大量数据时，显示的loadding组件。这个loadding组件在全局之下只被创建一次，那么这个loadding足奖就适用于单例模式。</p>
+<h2 id="简单的单例模式">简单的单例模式</h2>
+<p>其实，我们就算不知道单例模式的概念，日常中我们已经运用地非常广泛</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">single</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;single&#39;</span>,
+  <span style="color:#a6e22e">getName</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#a6e22e">retrun</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>;
+  }
+}
+</code></pre></div><p>对象字面量，我们在写js中已经写了非常之多。以上的代码，已经在window对象中实例化了single对象，这时只要使用single.getName()或window.single.getName()。且在ES6语法标准下，使用了const或let能够检查是否已被定义，避免出现变量被覆盖。</p>
+<h2 id="惰性的单例模式">惰性的单例模式</h2>
+<p>在正在使用中，我们不一定在页面完成时，将所有将要使用组件全部写入页面中，最后使用display隐藏起来，只需要在使用的再去动态创建它即可。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">loadding</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">function</span>(){
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">instance</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">init</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">text</span>) =&gt; {
+    <span style="color:#a6e22e">instance</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;div&#39;</span>)
+    <span style="color:#a6e22e">instance</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">text</span>
+  }
+  <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">text</span>) =&gt; {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">instance</span>) {
+      <span style="color:#a6e22e">instance</span>.<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">text</span>
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">instance</span>
+    }
+    <span style="color:#a6e22e">init</span>(<span style="color:#a6e22e">text</span>)
+
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">instance</span>
+  }
+})()
+
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">l1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">loadding</span>(<span style="color:#e6db74">&#39;text1&#39;</span>)
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">l2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">loadding</span>(<span style="color:#e6db74">&#39;text2&#39;</span>)
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">loadding1</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">loadding2</span>) <span style="color:#75715e">// true
+</span></code></pre></div><p>loadding组件，只有提醒用户当前流程耗时过长，才需要去显示出来。所以，我们在调用耗时长的操作时，就可以调用以上方法。且再次使用loadding组件时，可以重复使用。</p>
+<h2 id="命名空间">命名空间</h2>
+<p>项目的开发，往往不会只有你一个去进行开发和维护的。如果每个开发人员，都在window对象中定义变量，将会变得非常混乱，项目将会难以维护。那就应适当使用命名空间，减少全局变量</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">namespaceA</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;A&#39;</span>
+}
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">namespaceB</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;B&#39;</span>
+}
+
+</code></pre></div><p>上面的namespaceA和namespaceB两个命名空间，减少在全局中定义变量，减少一些不必要的冲突</p>
+<h2 id="总结">总结</h2>
+<p>单例模式，在项目中使用的地方非常多。确保有且只有一个实例，能避免重复创建上的开销。在命名空间的使用上，能大大减少使用全局变量出现的命名冲突问题，利于项目多人开发。</p><ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://blog.hotplato.top/" >
+    &copy;  HotPlato Blog 2020 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

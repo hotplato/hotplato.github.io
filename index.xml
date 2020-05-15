@@ -6,10 +6,19 @@
     <description>Recent content on HotPlato Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 04 Mar 2020 20:31:59 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 15 May 2020 23:26:31 +0800</lastBuildDate>
     
 	<atom:link href="http://blog.hotplato.top/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS设计模式-单例模式</title>
+      <link>http://blog.hotplato.top/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Fri, 15 May 2020 23:26:31 +0800</pubDate>
+      
+      <guid>http://blog.hotplato.top/posts/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <description>&lt;p&gt;单例模式，全局之下有且只有一个实例。我们代码之中，常常在加载大量数据时，显示的loadding组件。这个loadding组件在全局之下只被创建一次，那么这个loadding足奖就适用于单例模式。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>var let const使用和区别</title>
