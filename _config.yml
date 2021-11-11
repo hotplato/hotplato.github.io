@@ -4,9 +4,9 @@
 
 # Site
 title: Hot Plato Blog
-subtitle: ''
+subtitle: '没有一顿火锅解决不了的事情，不行就再来一顿...'
 description: '这是一个成长的网站'
-keywords:
+keywords: ['blog','javascript','typescript','news']
 author: hotplato
 language: zh-CN
 timezone: ''
