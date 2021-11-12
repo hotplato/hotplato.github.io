@@ -100,6 +100,7 @@ ignore:
 theme: simple
 theme_config:
   rss: false
+  google_analytics: 'G-WSL3WMSCKD'
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
