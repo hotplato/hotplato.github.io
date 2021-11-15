@@ -145,7 +145,8 @@ const serverHandler = async (request, response) => {
 | 2 | Firefox 93.0 (64 位) | 33.6 MB | 74627 ms |  |
 | 3 | Safari 15.0 (16612.1.29.41.4, 16612) | 33.6 MB | ---- | SharedArrayBuffer无法正常使用，无法测试 |
 | 4 | Chrome for Android 95.0.4638.74  | 33.6 MB | 91518 ms | https环境下，操作系统Android 11;IN2020 Build/RKQ1.201105.002 |
-| 4 | Firefox for Android 94.1.2  | 33.6 MB | ---- | 无法使用 |
+| 5 | Firefox for Android 94.1.2  | 33.6 MB | ---- | 无法使用 |
+| 5 | Safari for IOS  | 33.6 MB | ---- | 没有机器 |
 
 
 ## 结论
