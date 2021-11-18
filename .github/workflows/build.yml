@@ -1,0 +1,15 @@
+name: GitHub Actions Demo
+on: [push]
+jobs:
+  Build-Blog-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "开始编译 ${{ github.event_name }}"
+      - run: echo "当前通过GitHub运行在" ${{ runner.os }}!"
+      - run: echo "主要对 ${{ github.repository }} 的 ${{ github.ref }} 分支"
+      - name: Check out repository code
+        uses: actions/checkout@v2
+      - run: echo "💡 ${{ github.repository }} 已经复制下来了"
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
