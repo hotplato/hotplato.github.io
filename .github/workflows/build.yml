@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [12.x]
     steps:
       - run: echo "开始编译 ${{ github.event_name }}"
       - run: echo "当前通过GitHub运行在 ${{ runner.os }}!"
