@@ -2,6 +2,7 @@
 title: 初识WebAnimationsAPI
 date: 2021-11-12 10:04:01
 tags: [web,javascript,animations]
+excerpt: 当我们web端做起动画的第一想到的是CSS Animations，但今天我们将其转移到Javascript中去，在构建动画库和创建交互动画，提供了更完善的工具。
 ---
 
 当我们web端做起动画的第一想到的是CSS Animations，但今天我们将其转移到Javascript中去，在构建动画库和创建交互动画，提供了更完善的工具。

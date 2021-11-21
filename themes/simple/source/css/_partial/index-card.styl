@@ -1,0 +1,39 @@
+.article-card-group
+  margin: 1em 0
+  .article-card
+    width: 100%
+    margin-bottom: 1em
+    padding: 0.5em 0 0.75em 0
+    border-bottom: 1px card-border-bottom-style card-border-bottom-color
+    .article-card-container
+    .article-card-header
+      margin-bottom: 0.25em
+      .article-card-title
+        font-size: card-title-size
+        a
+          text-decoration: none
+          color: card-title-color
+          &:hover
+            color: card-title-hover-color
+      .article-card-intro
+        font-size: 1em
+        color: #333
+    footer
+      display: flex
+      justify-content: space-between
+      margin-top: 0.5em
+      .article-card-published
+        color: #999
+      .article-card-tag-list
+        .article-card-tag-list-item
+          margin-right: 0.5em
+          float: left
+          &:last-child
+            margin-right: 0
+          a
+            color: #999
+            text-decoration: none
+            &:before
+              content: '#'
+            &:hover
+              color: card-title-hover-color

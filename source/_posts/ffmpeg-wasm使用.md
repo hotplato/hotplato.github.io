@@ -2,6 +2,7 @@
 title: ffmpeg-wasm使用
 date: 2021-11-15 09:03:00
 tags: [WebAssembly,FFmpeg,javascript,utils]
+excerpt: FFmpeg是一款流行的开放源代码的自由软件。随着WebAssembly快速发展，FFmpeg wasm也随机诞生了。
 ---
 [FFmpeg](https://zh.wikipedia.org/wiki/FFmpeg)是一款流行的开放源代码的自由软件。随着[WebAssembly](https://zh.wikipedia.org/wiki/WebAssembly)快速发展，[FFmpeg wasm](https://github.com/ffmpegwasm/ffmpeg.wasm)也随机诞生了。
 

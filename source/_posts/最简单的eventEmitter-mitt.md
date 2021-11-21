@@ -2,6 +2,7 @@
 title: 最简单的eventEmitter-mitt
 date: 2021-11-11 13:53:00
 tags: [javascript,typescript]
+excerpt: 发布/订阅模式比较常用设计模式，今天给大家带来一个仅有200b的EventEmitter的mitt。
 ---
 [发布/订阅模式](https://zh.wikipedia.org/wiki/%E5%8F%91%E5%B8%83/%E8%AE%A2%E9%98%85)比较常用设计模式，今天给大家带来一个仅有200b的EventEmitter的[mitt](https://github.com/developit/mitt)。
 
