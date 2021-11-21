@@ -14,7 +14,7 @@
           text-decoration: none
           color: card-title-color
           &:hover
-            color: card-title-hover-color
+            color: link-hover-color
       .article-card-intro
         font-size: 1em
         color: #333
@@ -25,6 +25,7 @@
       .article-card-published
         color: #999
       .article-card-tag-list
+        clearfix()
         .article-card-tag-list-item
           margin-right: 0.5em
           float: left
@@ -36,4 +37,4 @@
             &:before
               content: '#'
             &:hover
-              color: card-title-hover-color
+              color: link-hover-color
