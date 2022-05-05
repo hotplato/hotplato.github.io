@@ -1,19 +1,50 @@
 #header
   height: banner-height
   position: relative
-  border-bottom: 1px solid color-border
-  &:before, &:after
-    content: ""
-    position: absolute
-    left: 0
-    right: 0
-    height: 40px
-  &:before
-    top: 0
-    background: linear-gradient(rgba(0, 0, 0, 0.2), transparent)
-  &:after
-    bottom: 0
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.2))
+  .header-container
+    width 100%
+    height: 100%
+    display: flex
+    align-items: center
+    .header-title
+      max-width: 1220px;
+      margin: 0 auto
+      text-align: center
+
+$logo-text
+  text-decoration: none
+  color: #666
+  font-weight: 300
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3)
+
+#logo
+  @extend $logo-text
+  font-size: logo-size
+  line-height: logo-size
+  letter-spacing: 2px
+
+#header-nav
+  position fixed
+  display: flex
+  justify-content: space-between
+  left: 0
+  right: 0
+  top: 0
+  height: 30px
+  line-height: 30px
+  text-align: right
+  background-color: #fff
+  border-bottom: 1px solid #eee
+  a
+   text-decoration: none
+   color: #666
+  .header-nav-title
+    margin-left: 30px
+  .header-nav-link
+    margin-right: 30px;
+    
+
+
 
 #header-outer
   height: 100%
@@ -29,29 +60,17 @@
   left: 0
   width: 100%
   height: 100%
-  background: url(banner-url) center #9cb2ce
-  background-size: cover
+  background-color: banner-background-color;
   z-index: -1
 
 #header-title
-  text-align: center
   height: logo-size
   position: absolute
   top: 50%
-  left: 0
+  left: 20px
   margin-top: logo-size * -0.5
 
-$logo-text
-  text-decoration: none
-  color: #fff
-  font-weight: 300
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3)
 
-#logo
-  @extend $logo-text
-  font-size: logo-size
-  line-height: logo-size
-  letter-spacing: 2px
 
 #subtitle
   @extend $logo-text
