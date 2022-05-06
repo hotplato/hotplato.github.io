@@ -2,8 +2,10 @@
   margin: 1em 0
   .article-card
     width: 100%
-    margin-bottom: 1em
-    padding: 0.5em 0 0.75em 0
+    background-color: var(--card-background-color)
+    padding: 1.5em
+    box-sizing: border-box
+    margin-bottom: 1.5em
     .article-card-container
     .article-card-header
       margin-bottom: 0.25em
@@ -11,7 +13,8 @@
         font-size: card-title-size
         a
           text-decoration: none
-          color: card-title-color
+          color: var(--card-title-color)
+          font-weight: bold
           &:hover
             color: link-hover-color
       .article-card-intro
