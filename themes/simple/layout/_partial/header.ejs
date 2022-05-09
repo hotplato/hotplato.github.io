@@ -6,10 +6,9 @@
       </h1>
     </div>
     <nav id="header-nav">
-      <!-- <a href="/" class="header-nav-title"><%= config.title %></a> -->
       <div>
         <% for (var i in theme.menu){ %>
-          <a class="header-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+          <a class="header-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= theme.menuMap[i] %></a>
         <% } %>
       </div>
     </nav>

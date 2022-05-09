@@ -2,6 +2,9 @@
 menu:
   Home: /
   Archives: /archives
+menuMap:
+  Home: 首页
+  Archives: "归档"
 rss: /atom.xml
 banner: "images/banner.jpg"
 

@@ -9,14 +9,33 @@
     .article-card-container
     .article-card-header
       margin-bottom: 0.25em
+      .article-card-published
+        display: block
+        color: #999
+        padding-bottom: 0.5em
       .article-card-title
+        position relative
         font-size: card-title-size
+        padding-bottom: 0.3em
+        &:after
+          position: absolute
+          bottom: 0
+          left 0
+          content: ''
+          height: 3px
+          width: 3%
+          background-color: #000
+          transition: width .25s, background-color 0.25s
+        &:hover
+          &:after
+            width 8%
+            background-color: link-hover-color
+          a
+           color: link-hover-color
         a
           text-decoration: none
           color: var(--card-title-color)
           font-weight: bold
-          &:hover
-            color: link-hover-color
       .article-card-intro
         font-size: 1em
         color: #333
@@ -24,8 +43,7 @@
       display: flex
       justify-content: space-between
       margin-top: 0.5em
-      .article-card-published
-        color: #999
+      
       .article-card-tag-list
         clearfix()
         .article-card-tag-list-item

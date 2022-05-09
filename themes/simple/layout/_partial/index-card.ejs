@@ -3,12 +3,10 @@
     <div class="article-card">
       <article class="article-card-container">
         <header class="article-card-header">
+          <time class="article-card-published" datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, null) %></time>
           <h1 class="article-card-title"><a href="<%- url_for(post.path) %>"><%= post.title %></a></h1>
         </header>
         <section class="article-card-intro"><%= post.excerpt %></section>
-        <footer>
-          <time class="article-card-published" datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, null) %></time>
-        </footer>
       </article>
     </div>
   <% }) %>
