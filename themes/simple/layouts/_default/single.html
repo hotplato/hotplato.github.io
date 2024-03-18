@@ -1,0 +1,34 @@
+
+{{ define "main" }}
+<style type="text/tailwindcss">
+  .content {
+    @apply text-slate-800 subpixel-antialiased mb-10;
+    h2 {
+      @apply text-2xl mb-2 font-bold;
+    }
+    p,ol {
+      @apply mb-5;
+    }
+    ol {
+      @apply list-inside list-decimal;
+    }
+    ol li {
+      @apply pl-5;
+    }
+    pre {
+      @apply overflow-auto;
+    }
+  }
+</style>
+  <header class="mb-5 border-0">
+    <h1 class="text-3xl mb-8 font-bold subpixel-antialiased">{{ .Title }}</h1>
+  {{ $dateMachine := .Date | time.Format "2006-01-02 15:04:05" }}
+  {{ $dateHuman := .Date | time.Format ":date_long" }}
+  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+  </header>
+
+  <div class="content">
+    {{ .Content }}
+  </div>
+  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+{{ end }}
