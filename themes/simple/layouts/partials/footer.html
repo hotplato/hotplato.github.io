@@ -1,1 +1,7 @@
-<p>Copyright {{ now.Year }}. All rights reserved.</p>
+{{- with resources.Get "images/hugo.min.svg" }}
+<footer class="w-full h-32 flex justify-center items-center flex-col text-sm py-4 text-amber-900">
+    <p class="flex items-center mb-2">Powered by Hugo <a href="https://gohugo.io/" class="ml-1"><img class="w-5 h-5" src="{{ .RelPermalink }}" alt=""> </a></p>
+    <p>Copyright {{ now.Year }} HotPlato. All rights reserved.</p>
+</footer>
+{{- end }}
+
