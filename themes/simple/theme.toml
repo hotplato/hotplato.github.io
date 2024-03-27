@@ -18,7 +18,6 @@ authors = [
   {name = 'Name of author', homepage = 'Website of author'},
   {name = 'Name of author', homepage = 'Website of author'}
 ]
-min_version = "0.84.0"
 
 # If the theme has a single author
 [author]
