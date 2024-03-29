@@ -2,36 +2,7 @@
 {{ define "main" }}
 <style type="text/tailwindcss">
 
-  .content {
-    @apply text-slate-800 subpixel-antialiased mb-10;
-
-    h1,h2,h3,h4,h5,h6 {
-      @apply font-bold mt-5;
-    }
-
-    h2 {
-      @apply text-2xl mb-2;
-    }
-    h3 {
-      @apply mb-2 text-xl;
-    }
-    p,ol {
-      @apply mb-3 leading-7;
-    }
-    ol {
-      @apply list-inside list-decimal;
-    }
-    ol li {
-      @apply pl-5;
-    }
-    pre {
-      @apply overflow-auto p-3 text-sm rounded;
-    }
-
-    .highlight {
-      @apply mb-2;
-    }
-  }
+  
 </style>
   <header class="mb-5 border-0">
     <h1 class="text-3xl mb-4 font-bold subpixel-antialiased">{{ .Title }}</h1>

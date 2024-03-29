@@ -10,6 +10,7 @@ Thumbs.db
 .idea/
 public/
 nbproject/
+node_modules/
 
 # Vagrant
 .vagrant/

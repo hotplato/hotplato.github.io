@@ -1,0 +1,43 @@
+---
+title: Base64工具
+date: "2024-03-29"
+layout: other
+params:
+  is_single_page: true
+---
+
+<div>
+  <textarea name="" id="input"></textarea>
+  <textarea name="" id="output"></textarea>
+</div>
+<button id="encode">加密</button>
+<button id="decode">解密</button>
+<script>
+  const input = document.getElementById('input')
+  const output = document.getElementById('output')
+  const encode = document.getElementById('encode')
+  const decode = document.getElementById('decode')
+
+  encode.addEventListener('click', function() {
+    const inputStr = input.value;
+    if (inputStr) {
+      output.value = utf8_to_b64(inputStr)
+    }
+  })
+
+  decode.addEventListener('click', function() {
+    const inputStr = input.value;
+    if (inputStr) {
+      output.value = b64_to_utf8(inputStr)
+    }
+  })
+
+  function utf8_to_b64(str) {
+    return btoa(unescape(encodeURIComponent(str)));
+  }
+
+  function b64_to_utf8(str) {
+    return decodeURIComponent(escape(atob(str)));
+}
+
+</script>

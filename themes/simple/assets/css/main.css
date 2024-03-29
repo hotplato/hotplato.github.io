@@ -1,17 +1,34 @@
-body {
-  color: #222;
-  font-family: sans-serif;
-  line-height: 1.5;
-  margin: 1rem;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-header {
-  border-bottom: 1px solid #222;
-  margin-bottom: 1rem;
-}
+.content {
+  @apply text-slate-800 subpixel-antialiased mb-10;
 
+  h1,h2,h3,h4,h5,h6 {
+    @apply font-bold mt-5;
+  }
 
-a {
-  color: #00e;
-  text-decoration: none;
+  h2 {
+    @apply text-2xl mb-2;
+  }
+  h3 {
+    @apply mb-2 text-xl;
+  }
+  p,ol {
+    @apply mb-3 leading-7;
+  }
+  ol {
+    @apply list-inside list-decimal;
+  }
+  ol li {
+    @apply pl-5;
+  }
+  pre {
+    @apply overflow-auto p-3 text-sm rounded;
+  }
+
+  .highlight {
+    @apply mb-2;
+  }
 }
