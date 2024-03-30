@@ -6,29 +6,65 @@ params:
   is_single_page: true
 ---
 
-<div>
-  <textarea name="" id="input"></textarea>
-  <textarea name="" id="output"></textarea>
+<div class="w-full sm:flex sm:flex-row mb-3">
+  <div class="mb-3 sm:basis-1/2 sm:mb-0">
+    <textarea
+      class="w-full sm:w-11/12 h-60 rounded resize-none p-2 text-sm focus:outline-none focus:ring ring-orange-200 text-gray-600"
+      placeholder="请输入要加/解密的字符串"
+      id="input"
+    ></textarea>
+  </div>
+  <div class="sm:basis-1/2 relative">
+    <textarea
+      readonly
+      class="w-full sm:w-11/12 h-60 rounded resize-none p-2 text-sm read-only:bg-white focus:outline-none cursor-pointer"
+      placeholder="加/解密结果将会在此输出,点击复制内容"
+      id="result"
+    ></textarea>
+  </div>
 </div>
-<button id="encode">加密</button>
-<button id="decode">解密</button>
+<div class="sm:flex sm:flex-row sm:justify-center">
+  <button
+    class="w-full mb-3 sm:mb-0 sm:w-auto bg-orange-400 hover:bg-orange-500 text-white px-5 py-2 rounded-md text-sm mr-5"
+    id="encode"
+  >
+    加密
+  </button>
+  <button
+    class="w-full sm:w-auto bg-orange-400 hover:bg-orange-500 text-white px-5 py-2 rounded-md text-sm"
+    id="decode"
+  >
+    解密
+  </button>
+</div>
 <script>
-  const input = document.getElementById('input')
-  const output = document.getElementById('output')
-  const encode = document.getElementById('encode')
-  const decode = document.getElementById('decode')
+  const input = document.getElementById("input");
+  const resultWindow = document.getElementById("result");
+  const encode = document.getElementById("encode");
+  const decode = document.getElementById("decode");
 
-  encode.addEventListener('click', function() {
+  encode.addEventListener("click", function () {
     const inputStr = input.value;
     if (inputStr) {
-      output.value = utf8_to_b64(inputStr)
+      resultWindow.value = utf8_to_b64(inputStr);
     }
-  })
+  });
 
-  decode.addEventListener('click', function() {
+  decode.addEventListener("click", function () {
     const inputStr = input.value;
     if (inputStr) {
-      output.value = b64_to_utf8(inputStr)
+      resultWindow.value = b64_to_utf8(inputStr);
+    }
+  });
+
+  resultWindow.addEventListener('click', function () {
+    if (resultWindow.value) {
+      const text = resultWindow.value;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text)
+      }else {
+        document.execCommand('copy', true)
+      }
     }
   })
 
@@ -38,6 +74,5 @@ params:
 
   function b64_to_utf8(str) {
     return decodeURIComponent(escape(atob(str)));
-}
-
+  }
 </script>

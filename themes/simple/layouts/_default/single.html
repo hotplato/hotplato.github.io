@@ -14,5 +14,9 @@
   <div class="content">
     {{ .Content }}
   </div>
+  <script>
+    const images = document.getElementsByTagName("img")
+    console.log(images)
+  </script>
   {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 {{ end }}

@@ -28,6 +28,10 @@
     @apply overflow-auto p-3 text-sm rounded;
   }
 
+  /* img {
+    @apply cursor-zoom-in;
+  } */
+
   .highlight {
     @apply mb-2;
   }

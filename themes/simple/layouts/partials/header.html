@@ -1,2 +1,12 @@
-<h1>{{ site.Title }}</h1>
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+<header class="h-12 px-5 border-b-1 flex justify-between items-center text-orange-700 hover:text-orange-800">
+  <a href="/" class="flex items-center  ">
+    {{- with resources.Get "images/logo.png" }}
+    <img class="w-8 h-8 mr-2" src="{{ .RelPermalink }}" alt="logo" />
+    {{end}}
+    <h1>{{site.Title}}</h1></a
+  >
+  {{ if .IsHome }}
+  <a target="_blank" href="/base64">BASE64</a>
+  {{ end }}
+  <!-- {{ partial "menu.html" (dict "menuID" "main" "page" .) }} -->
+</header>
